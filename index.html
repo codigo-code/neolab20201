@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    
+    <neo-input></neo-input>
+    <neo-resta></neo-resta>
+    <div id="contador" >
+
+    </div>
+
+    <br/>
+
+    <neo-nombre></neo-nombre>
+
+
+    <br />
+
+    <script>
+        const tpl =  document.createElement('template');
+        const tpl2 = document.createElement('template');
+        const tpl3 = document.createElement('template');
+
+        var contador = document.getElementById("contador");
+
+
+        var i = 0;
+
+        tpl.innerHTML=`
+            <div>
+                <h2 style="color:red">Hola Neoris </h2>
+                <button>+</button>
+                
+            </div>
+        `;
+
+        tpl2.innerHTML=`
+            <button>-</button>
+        `;
+
+        tpl3.innerHTML=`
+            <input placeholder="ingrese su nombre"/>
+            <div id="nombre"></div>
+        `;
+
+
+        // me creo la clase NeoInput que extiende la funcionaldiad de HTMLElement 
+        class NeoInput extends HTMLElement{
+
+            // como tengo que llamar al ciclo de vida tengo 2 opciones
+            // 1 -> utilizar el constructor 
+            // 2 -> connectedCallback();
+            constructor(){
+                super();
+                // se le da el comportamiento del web compontent
+                // me creo una variable privada llamda _shadoRoot 
+                // le agrego el comportamiento para que pueda adjuntanrse
+                // de forma "en las sombras" -> shadow el template...
+                this._shadowRoot= this.attachShadow({'mode':'open'});
+                // agrego el templete a mi shadowRoot
+                this._shadowRoot.appendChild(tpl.content.cloneNode(true));
+
+                this.b = this._shadowRoot.querySelector("button");
+                
+
+                this.b.addEventListener('click',()=>{
+                    contador.innerHTML = ++i;
+                });
+
+            }
+        }
+
+
+        class NeoResta extends HTMLElement{
+            constructor(){
+                super();
+
+                this._shadowRoot= this.attachShadow({'mode':'open'});
+                // agrego el templete a mi shadowRoot
+                this._shadowRoot.appendChild(tpl2.content.cloneNode(true));
+                this.b= this._shadowRoot.querySelector('button');
+                this.b.addEventListener('click',()=>{
+                    contador.innerHTML = --i;
+                })
+            }
+        }
+
+        class NeoNombre extends HTMLElement{
+            constructor(){
+                super();
+
+                this._shadowRoot= this.attachShadow({'mode':'open'});
+                // agrego el templete a mi shadowRoot
+                this._shadowRoot.appendChild(tpl3.content.cloneNode(true));
+                this.input = this._shadowRoot.querySelector('input');
+                this.nombre = this._shadowRoot.querySelector("#nombre");
+                this.input.addEventListener('input',()=>{
+                    this.nombre.innerHTML = this.input.value;
+                });
+            }
+        }
+        
+        // simularia la inicializacion del objeto
+        window.customElements.define('neo-input',NeoInput);
+        window.customElements.define('neo-resta',NeoResta);
+        window.customElements.define('neo-nombre',NeoNombre);
+
+
+    </script>
+
+</body>
+</html>

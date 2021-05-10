@@ -10,7 +10,7 @@
 
 <body>
 
-    <neo-personaje id="3"></neo-personaje>
+    <neo-personaje  id="20" name="algo" ></neo-personaje>
 
     <script>
         const t = document.createElement('template');
@@ -47,7 +47,7 @@
             }
 
             static get observedAttributes() {
-                return ['nombre', 'age', 'id']
+                return ['id','name']
             }
 
             connectedCallback() {
@@ -59,7 +59,7 @@
                 this.altura = this._shadowRoot.querySelector('#altura');
                 this.input = this._shadowRoot.querySelector('input');
                 this.b = this._shadowRoot.querySelector('button');
-                
+            
 
                 this.b.addEventListener('click', () => {
 
@@ -99,8 +99,8 @@
 
                 console.log(name + " " + oldValue + " " + newValue);
 
-                // toda la logica que quiero para las modificaciones de los atributos 
-                fetch('https://swapi.dev/api/people/' + newValue + '/')
+                //toda la logica que quiero para las modificaciones de los atributos 
+                fetch('https://swapi.dev/api/people/' + this.getAttribute('id') + '/')
                     .then(resp => resp.json())
                     .then(data => {
 

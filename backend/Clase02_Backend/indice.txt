@@ -1,0 +1,12 @@
+1- identificadores
+2- tiposPrimitivos
+3- constantes
+4- metodos
+5- Wrappers
+6- thisSuper
+7- alcanceVariables
+8- operadores
+9- estructurasControl
+10- stringStingBufferStringBuilder
+11- arraysEnums
+12- excepciones

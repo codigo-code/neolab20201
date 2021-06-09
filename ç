@@ -1,0 +1,38 @@
+update
+# Por favor ingresa el mensaje del commit para tus cambios. Las
+#  líneas que comiencen con '#' serán ignoradas, y un mensaje
+#  vacío aborta el commit.
+#
+# En la rama master
+# Tu rama está actualizada con 'origin/master'.
+#
+# Cambios a ser confirmados:
+#	modificado:     ../.DS_Store
+#	modificado:     .DS_Store
+#	nuevo archivo:  clase14/.gitignore
+#	nuevo archivo:  clase14/README.md
+#	nuevo archivo:  clase14/package-lock.json
+#	nuevo archivo:  clase14/package.json
+#	nuevo archivo:  clase14/public/favicon.ico
+#	nuevo archivo:  clase14/public/index.html
+#	nuevo archivo:  clase14/public/logo192.png
+#	nuevo archivo:  clase14/public/logo512.png
+#	nuevo archivo:  clase14/public/manifest.json
+#	nuevo archivo:  clase14/public/robots.txt
+#	nuevo archivo:  clase14/src/App.css
+#	nuevo archivo:  clase14/src/App.js
+#	nuevo archivo:  clase14/src/App.test.js
+#	nuevo archivo:  clase14/src/components/Persona.js
+#	nuevo archivo:  clase14/src/components/RickMorty.js
+#	nuevo archivo:  clase14/src/components/UsuarioComponent.js
+#	nuevo archivo:  clase14/src/index.css
+#	nuevo archivo:  clase14/src/index.js
+#	nuevo archivo:  clase14/src/logo.svg
+#	nuevo archivo:  clase14/src/reportWebVitals.js
+#	nuevo archivo:  clase14/src/setupTests.js
+#	nuevo archivo:  clase14/yarn.lock
+#	nuevo archivo:  reactTest
+#
+# Cambios no rastreados para el commit:
+#	modificado:     reactTest (contenido modificado, contenido no rastreado)
+#
